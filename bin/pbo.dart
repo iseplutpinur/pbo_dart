@@ -1,5 +1,12 @@
-import 'package:pbo/pbo.dart' as pbo;
+// fungsi dengan return
+import 'dart:io';
+
+double luas_segiempat(double panjang, double lebar) {
+  return panjang * lebar;
+}
 
 void main(List<String> arguments) {
-  print('Hello world: ${pbo.calculate()}!');
+  double p, l, luas;
+  print('Panjang: ');
+  p = double.tryParse(stdin.readLineSync()!) ?? 0;
 }
