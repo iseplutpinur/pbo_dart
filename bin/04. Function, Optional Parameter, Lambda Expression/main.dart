@@ -14,6 +14,21 @@ void sapa({String nama = 'Isep Lutpi nur'}) {
   print('Hallo $nama');
 }
 
+// arrow syntax
+// digunakan untuk menyingkat sebuah fungsi untuk mengembalikan sebuah nilai
+// satu baris
+// => return
+int adding({satu = 0, dua = 0}) => satu + dua;
+
+// anonimus function
+int doMathOperation({
+  int satu = 0,
+  int dua = 0,
+  required Function mathFunction,
+}) {
+  return mathFunction(satu, dua);
+}
+
 void main(List<String> args) {
   double? panjang, lebar, luas;
 
@@ -33,4 +48,18 @@ void main(List<String> args) {
       'dan luas $luas adalah $luas_segi_empat');
 
   sapa(nama: 'mantan');
+
+  // arrow function
+  print(adding(dua: 10, satu: 5));
+
+  // variable sebagai fungsi
+  Function adds = adding;
+  print(adds(dua: 10, satu: 5));
+
+  // anoimus function
+  print(doMathOperation(
+    satu: 10,
+    dua: 5,
+    mathFunction: (int a, int b) => a * b,
+  ));
 }
